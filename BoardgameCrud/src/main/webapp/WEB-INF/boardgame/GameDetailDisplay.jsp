@@ -12,12 +12,16 @@
 		<c:choose>
 			<c:when test="${! empty game}">
 				<div>
-					<h3>
-						Game ID: ${game.id} <br>Game Name: ${game.name} <br>
-						Game Description: ${game.description}<br>
-					</h3>
-					<br>
-					<h4>Category: ${game.category}</h4>
+				<h4>BoardGame ID: ${game.id} </h4>
+					<h3>Name: ${game.name}</h3><br>
+					<strong>Description:</strong> ${game.description}<br>
+					<strong>Minimum # of Players:</strong> ${game.minPlayers}<br>
+					<strong>Maximum # of Players:</strong> ${game.maxPlayers}<br>
+					<strong>Avg Time to Play:</strong> ${game.playTime}<br>
+					<strong>Category/Play Style:</strong> ${game.category}<br>
+					<strong>House Rules:</strong> ${game.houseRules}<br>
+					<strong>Cost:</strong> ${game.cost}<br>
+					<strong>Release Year:</strong> ${game.releaseYear}<br>
 				</div>
 				<hr>
 				<h4>What would you like to do with this game?</h4>
@@ -25,7 +29,7 @@
 					<button type="submit" name="id" value="${game.id}">Update</button>
 				</form>
 				<br>
-				<form action="deleteFilm.do" method="POST">
+				<form action="deleteGame.do" method="POST">
 					<button type="submit" name="id" value="${game.id}">Delete</button>
 				</form>
 			</c:when>

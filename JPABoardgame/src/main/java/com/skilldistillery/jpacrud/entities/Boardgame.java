@@ -16,26 +16,28 @@ public class Boardgame {
 	private String description;
 	
 	@Column(name="min_players")
-	private int minPlayers;
+	private Integer minPlayers;
 
 	@Column(name="max_players")
-	private int maxPlayers;
+	private Integer maxPlayers;
 	
 	@Column(name="play_time")
-	private int playTime;
+	private Integer playTime;
 	
 	private String category;
 	
 	@Column(name="house_rules")
 	private String houseRules;
-	private double cost;
+	private Double cost;
 	
 	@Column(name="release_year")
-	private int releaseYear;
+	private Integer releaseYear;
 	
 	public Boardgame() {
 		super();
 	}
+
+	
 
 	public int getId() {
 		return id;
@@ -61,27 +63,27 @@ public class Boardgame {
 		this.description = description;
 	}
 
-	public int getMinPlayers() {
+	public Integer getMinPlayers() {
 		return minPlayers;
 	}
 
-	public void setMinPlayers(int minPlayers) {
+	public void setMinPlayers(Integer minPlayers) {
 		this.minPlayers = minPlayers;
 	}
 
-	public int getMaxPlayers() {
+	public Integer getMaxPlayers() {
 		return maxPlayers;
 	}
 
-	public void setMaxPlayers(int maxPlayers) {
+	public void setMaxPlayers(Integer maxPlayers) {
 		this.maxPlayers = maxPlayers;
 	}
 
-	public int getPlayTime() {
+	public Integer getPlayTime() {
 		return playTime;
 	}
 
-	public void setPlayTime(int playTime) {
+	public void setPlayTime(Integer playTime) {
 		this.playTime = playTime;
 	}
 
@@ -101,21 +103,23 @@ public class Boardgame {
 		this.houseRules = houseRules;
 	}
 
-	public double getCost() {
+	public Double getCost() {
 		return cost;
 	}
 
-	public void setCost(double cost) {
+	public void setCost(Double cost) {
 		this.cost = cost;
 	}
 
-	public int getReleaseYear() {
+	public Integer getReleaseYear() {
 		return releaseYear;
 	}
 
-	public void setReleaseYear(int releaseYear) {
+	public void setReleaseYear(Integer releaseYear) {
 		this.releaseYear = releaseYear;
 	}
+
+
 
 	@Override
 	public String toString() {

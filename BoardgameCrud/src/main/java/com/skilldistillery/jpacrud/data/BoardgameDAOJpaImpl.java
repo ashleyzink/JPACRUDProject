@@ -56,13 +56,16 @@ public class BoardgameDAOJpaImpl implements BoardgameDAO {
 		updateGame.setCost(boardgame.getCost());
 		updateGame.setReleaseYear(boardgame.getReleaseYear());
 		em.flush();
-		return boardgame;
+		return updateGame;
 	}
 
 	@Override
-	public boolean deleteGame(Boardgame boardgame) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteGame(int id) {
+		Boardgame deleteGame = em.find(Boardgame.class, id);
+		em.remove(deleteGame);
+		boolean gameDeleted = ! em.contains(deleteGame);
+		em.flush();
+		return gameDeleted;
 	}
 
 }

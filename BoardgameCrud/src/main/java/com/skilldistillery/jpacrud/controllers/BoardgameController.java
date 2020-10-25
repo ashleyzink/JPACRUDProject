@@ -49,9 +49,9 @@ public class BoardgameController {
 	}
 	
 	@RequestMapping(path = "updateGame.do", method = RequestMethod.POST )
-	public String updateGame(Integer id, Boardgame bgame, Model model) {
-		Boardgame updateGame = bgameDAO.findById(id);
-		model.addAttribute(updateGame);
+	public String updateGame(Boardgame bgame, Model model) {
+		Boardgame updateGame = bgameDAO.updateGame(bgame);
+		model.addAttribute("game", updateGame);
 		return "/WEB-INF/boardgame/GameDetailDisplay.jsp";
 	}
 	
@@ -59,6 +59,17 @@ public class BoardgameController {
 	public String redirToUpdate(Integer id, Model model) {
 		model.addAttribute("game", bgameDAO.findById(id));
 		return "/WEB-INF/boardgame/UpdateGame.jsp";
+	}
+	
+	@RequestMapping(path = "deleteGame.do", method = RequestMethod.POST)
+	public String deleteGame(Integer id, RedirectAttributes redir) {
+		bgameDAO.deleteGame(id);
+		return("redirect:gameDeleted.do");
+	}
+	
+	@RequestMapping(path = "gameDeleted.do", method = RequestMethod.GET)
+	public String deleted() {
+		return "/WEB-INF/boardgame/Deleted.jsp";
 	}
 
 }

@@ -16,7 +16,7 @@ public interface BoardgameDAO {
 	
 	Boardgame updateGame(Boardgame boardgame);
 	
-	boolean deleteGame(Boardgame boardgame);
+	boolean deleteGame(int id);
 	
 	
 
