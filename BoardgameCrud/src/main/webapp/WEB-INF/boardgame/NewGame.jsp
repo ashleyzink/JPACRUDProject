@@ -15,10 +15,10 @@
       <input type="text" name="description" value="description">
       <br>
 	<label for="minPlayers">Minimum # of Players:</label>
-      <input type="text" name="minPlayers" value="minPlayers">
+      <input type="text" name="minPlayers" value="2">
       <br>
 	<label for="maxPlayers">Maximum # of Players:</label>
-      <input type="text" name="maxPlayers" value="maxPlayers">
+      <input type="text" name="maxPlayers" value="4">
       <br>
       
       

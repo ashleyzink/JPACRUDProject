@@ -10,7 +10,13 @@ public interface BoardgameDAO {
 	
 	List<Boardgame> findAll();
 	
+	List<Boardgame> findGameByKeyword(Boardgame boardgame);
+	
 	Boardgame addGame(Boardgame boardgame);
+	
+	Boardgame updateGame(Boardgame boardgame);
+	
+	boolean deleteGame(Boardgame boardgame);
 	
 	
 

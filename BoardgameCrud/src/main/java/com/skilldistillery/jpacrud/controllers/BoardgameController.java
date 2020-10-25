@@ -42,10 +42,23 @@ public class BoardgameController {
 	public String addGameRedir() {
 		return "/WEB-INF/boardgame/GameDetailDisplay.jsp";
 	}
+	
 	@RequestMapping(path = "newGameForm.do", method = RequestMethod.GET)
 	public String redirToNewGameForm() {
 		return "/WEB-INF/boardgame/NewGame.jsp";
 	}
 	
+	@RequestMapping(path = "updateGame.do", method = RequestMethod.POST )
+	public String updateGame(Integer id, Boardgame bgame, Model model) {
+		Boardgame updateGame = bgameDAO.findById(id);
+		model.addAttribute(updateGame);
+		return "/WEB-INF/boardgame/GameDetailDisplay.jsp";
+	}
+	
+	@RequestMapping(path = "redirToUpdate.do", method = RequestMethod.GET)
+	public String redirToUpdate(Integer id, Model model) {
+		model.addAttribute("game", bgameDAO.findById(id));
+		return "/WEB-INF/boardgame/UpdateGame.jsp";
+	}
 
 }

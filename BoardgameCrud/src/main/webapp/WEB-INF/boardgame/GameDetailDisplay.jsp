@@ -21,8 +21,8 @@
 				</div>
 				<hr>
 				<h4>What would you like to do with this game?</h4>
-				<form action="redirToUpdate.do" method="POST">
-					<button type="submit" name="gameId" value="${game.id}">Update</button>
+				<form action="redirToUpdate.do" method="GET">
+					<button type="submit" name="id" value="${game.id}">Update</button>
 				</form>
 				<br>
 				<form action="deleteFilm.do" method="POST">
@@ -31,7 +31,10 @@
 			</c:when>
 			<c:otherwise>
 				<div>We could not find your game in our current inventory.
-				Would you like to add it? 
+				Would you like to add it? <br>
+				<a href="newGameForm.do">Add a New Game </a><br/>
+				<a href="/">Go to Home page </a><br/>
+				
 				</div>
 			</c:otherwise>
 		</c:choose>

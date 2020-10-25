@@ -28,12 +28,41 @@ public class BoardgameDAOJpaImpl implements BoardgameDAO {
 		return em.createQuery(jpql, Boardgame.class).getResultList();
 
 	}
+	
+	@Override
+	public List<Boardgame> findGameByKeyword(Boardgame boardgame) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public Boardgame addGame(Boardgame boardgame) {
 		em.persist(boardgame);
 		em.flush();
 		return boardgame;
+	}
+
+
+	@Override
+	public Boardgame updateGame(Boardgame boardgame) {
+		Boardgame updateGame = em.find(Boardgame.class, boardgame.getId());
+		updateGame.setName(boardgame.getName());
+		updateGame.setDescription(boardgame.getDescription());
+		updateGame.setMinPlayers(boardgame.getMinPlayers());
+		updateGame.setMaxPlayers(boardgame.getMaxPlayers());
+		updateGame.setPlayTime(boardgame.getPlayTime());
+		updateGame.setCategory(boardgame.getCategory());
+		updateGame.setHouseRules(boardgame.getHouseRules());
+		updateGame.setCost(boardgame.getCost());
+		updateGame.setReleaseYear(boardgame.getReleaseYear());
+		em.flush();
+		return boardgame;
+	}
+
+	@Override
+	public boolean deleteGame(Boardgame boardgame) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
