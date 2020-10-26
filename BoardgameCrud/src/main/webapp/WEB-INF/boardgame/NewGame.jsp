@@ -27,11 +27,14 @@
       <select name="category" id="category">
       <option value="Area Control">Area Control </option>
       <option value="Campaign">Campaign </option>
+      <option value="Card Game">Card Game </option>
       <option value="Deckbuilder">Deckbuilder </option>
       <option value="Drafting">Drafting </option>
       <option value="Eurogame">Eurogame </option>
       <option value="Roll and Move">Roll and Move </option>
+      <option value="Strategy">Strategy </option>
       <option value="Wargame">Wargame </option>
+      <option value="Worker Placement">Worker Placement </option>
       </select><br>
       <label for="houseRules">House Rules:</label>
       <input type="text" name="houseRules" >

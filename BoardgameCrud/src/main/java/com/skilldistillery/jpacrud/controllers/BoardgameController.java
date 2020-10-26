@@ -19,10 +19,17 @@ public class BoardgameController {
 	private BoardgameDAO bgameDAO;
 	
 	@RequestMapping(path="/", method = RequestMethod.GET)
+	public String index() {
+//		List<Boardgame> gameList = bgameDAO.findAll();
+//		model.addAttribute("games", gameList);
+		return "/WEB-INF/index.jsp";
+	}
+	
+	@RequestMapping(path="gameList.do", method = RequestMethod.GET)
 	public String index(Model model) {
 		List<Boardgame> gameList = bgameDAO.findAll();
 		model.addAttribute("games", gameList);
-		return "/WEB-INF/index.jsp";
+		return "/WEB-INF/boardgame/ListOfGames.jsp";
 	}
 	
 	@RequestMapping(path="getGame.do", method = RequestMethod.GET)
