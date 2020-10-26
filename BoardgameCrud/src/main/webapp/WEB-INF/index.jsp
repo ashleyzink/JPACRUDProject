@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 <title>BoardGame Depot</title>
 </head>
-<body>
+<body style="background-color:powderblue;">
 	<div class="container">
 		
 		<h1 style="text-align:center;">*~*~*Biggest List of BoardGames*~*~*</h1>
@@ -27,11 +27,14 @@
 	<%-- <c:forEach var="game" items="${games}">
 	<a href="getGame.do?gid=${game.id}">${game.name}</a><br> 
 	</c:forEach> --%>
-
-	<a href="newGameForm.do">Add a New Game </a>
-	<br />
-	<a href="gameList.do">See Game List </a>
-	<br />
+	<br>
+	<hr>
+	<p>
+	<a href="newGameForm.do" class="btn btn-secondary" role="button">Add a New Game </a>
+	</p>
+	<p>
+	<a href="gameList.do" class="btn btn-secondary" role="button">See Game List </a>
+	</p>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
